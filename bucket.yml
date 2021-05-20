@@ -1,0 +1,22 @@
+Description: Cria um bucket no S3
+
+Resources:
+    BucketLupyS2: 
+        Type: AWS::S3::Bucket
+        Properties: 
+            BucketName: bucket-s3-lupy
+            PublicAccessBlockConfiguration: 
+                BlockPublicAcls: True
+                BlockPublicPolicy: True
+                IgnorePublicAcls: True
+                RestrictPublicBuckets: True
+            BucketEncryption: 
+                ServerSideEncryptionConfiguration: 
+                    - ServerSideEncryptionByDefault:
+                        SSEAlgorithm: AES256
+
+
+    BootcampMillas: 
+        Type: AWS::S3::Bucket
+        Properties: 
+            BucketName: bucket-s3-millas-bootcamp
