@@ -3,7 +3,7 @@ name: Deploy Bucket
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
@@ -15,7 +15,7 @@ jobs:
         with:
           python-version: '3.8'
       - name: Install Requirements
-        run: pip install -r requirements.txt 
+        run: pip install -r requirements.txt
       - name: Deploy
         env: 
           AWS_ACCESS_KEY_ID: ${{ AWS_ACCESS_KEY_ID }}
